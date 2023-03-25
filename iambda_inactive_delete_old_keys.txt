@@ -1,0 +1,36 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "ses:SendEmail",
+                "iam:DeleteAccessKey",
+                "ses:*",
+                "ses:SendRawEmail",
+                "iam:UpdateAccessKey",
+                "iam:ListUsers",
+                "iam:CreateAccessKey",
+                "iam:ListAccessKeys"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "ses:SendEmail",
+            "Resource": [
+                "arn:aws:ses:us-east-1:644114720356:identity/ranjithk100@gmail.com",
+                "arn:aws:ses:us-east-1:644114720356:identity/gowthami.vajrala460@gmail.com"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*",
+                "s3-object-lambda:*"
+            ],
+            "Resource": "arn:aws:s3:::lambda-to-trigger-s3-bucket"
+        }
+    ]
+}
